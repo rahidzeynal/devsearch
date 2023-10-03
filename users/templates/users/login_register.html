@@ -54,7 +54,7 @@
 
       <div class="auth__header text-center">
         <a href="/">
-          <img src="{% static 'images/icon.svg' %}" alt="icon" />
+          {% comment %} <img src="{% static 'images/icon.svg' %}" alt="icon"  /> {% endcomment %}
         </a>
         <h3>Account Login</h3>
         <p>Hello Developer, Welcome Back!</p>
@@ -77,7 +77,7 @@
         </div>
         <div class="auth__actions">
           <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
-          <a href="forgetpassword.html">Forget Password?</a>
+          <a href="{% url 'reset_password' %}">Forget Password?</a>
         </div>
       </form>
 
