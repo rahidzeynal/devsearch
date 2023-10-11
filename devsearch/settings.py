@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # newly created app list
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
