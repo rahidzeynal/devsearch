@@ -13,7 +13,7 @@ class Tag(models.Model):
         return self.name
 
 class Project(models.Model):
-    owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL)
+    owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     featured_image = models.ImageField(null=True, blank=True, default='default.jpg')
@@ -31,6 +31,15 @@ class Project(models.Model):
     class Meta:
         ordering = ['created']
     
+    @property
+    def imageURL(self):
+        try:
+            url = self.featured_image.url
+        except:
+            url = ''
+        return url
+
+
     @property
     def reviewers(self):
         queryset = self.review_set.all().values_list('owner__id', flat=True)
