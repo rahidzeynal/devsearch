@@ -14,4 +14,6 @@ urlpatterns = [
     path('users/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     path('projects/<str:pk>/vote/', views.projectVote),
+
+    path('remove-tag/', views.removeTag),
 ]

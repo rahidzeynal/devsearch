@@ -75,7 +75,7 @@ def updateProject(request, pk):
                 project.tags.add(tag)
             messages.success(request, 'Project was updated successfully!')
             return redirect('account')
-    context = {'form':form}
+    context = {'form':form, 'project':project}
     return render(request, 'projects/project_form.html', context=context)
 
 @login_required(login_url="login")
