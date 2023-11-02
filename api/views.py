@@ -20,7 +20,7 @@ def getRoutes(request):
     return Response(routes)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def getProjects(request):
     print("User: ", request.user)
     projects = Project.objects.all()
@@ -35,7 +35,7 @@ def getProject(request, pk):
 
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def projectVote(request, pk):
     project = Project.objects.get(id=pk)
     user = request.user.profile
