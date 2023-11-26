@@ -24,6 +24,7 @@ class Project(models.Model):
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    # temp_id = models.UUIDField(default=uuid.uuid4)
 
     def __str__(self) -> str:
         return self.title
