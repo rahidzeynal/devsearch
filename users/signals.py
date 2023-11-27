@@ -18,13 +18,14 @@ def createProfile(sender, instance, created, **kwargs):
 
         subject = 'Welcome to DevSearch'
         message = 'We are glad that you are here!'
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            [profile.email],
-            fail_silently=False
-        )
+        # Need to create this part more secure, for now the value EMAIL_HOST_PASSWORD in settigns.py is set as expired
+        # send_mail(
+        #     subject,
+        #     message,
+        #     settings.EMAIL_HOST_USER,
+        #     [profile.email],
+        #     fail_silently=False
+        # )
 
 def updateUser(sender, instance, created, **kwargs):
     profile = instance
